@@ -1,10 +1,9 @@
 // Data Mockup - Firebase 연동 전 사용할 데이터 구조
 const mockData = {
     metrics: {
-        labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+        labels: ['06/16', '06/17', '06/18', '06/19', '06/20', '06/21', '06/22'],
         visitors: [10, 45, 120, 310, 520, 800, 1200],
-        downloads: [2, 10, 35, 80, 150, 300, 500],
-        revenue: [0, 0, 5000, 15000, 45000, 120000, 250000]
+        appsDeveloped: [1, 1, 0, 1, 0, 1, 1]
     },
     apps: [
         {
@@ -98,39 +97,25 @@ function initCharts() {
         options: commonOptions
     });
 
-    // Downloads Chart
-    const ctxDownloads = document.getElementById('downloadsChart').getContext('2d');
-    new Chart(ctxDownloads, {
+    // Apps Developed Chart
+    const ctxAppsDev = document.getElementById('appsDevChart').getContext('2d');
+    new Chart(ctxAppsDev, {
         type: 'bar',
         data: {
             labels: mockData.metrics.labels,
             datasets: [{
-                label: '다운로드 수',
-                data: mockData.metrics.downloads,
-                backgroundColor: '#3b82f6',
+                label: '일일 앱 개발 수',
+                data: mockData.metrics.appsDeveloped,
+                backgroundColor: '#8b5cf6', // Purple
                 borderRadius: 4
             }]
         },
-        options: commonOptions
-    });
-
-    // Revenue Chart
-    const ctxRevenue = document.getElementById('revenueChart').getContext('2d');
-    new Chart(ctxRevenue, {
-        type: 'line',
-        data: {
-            labels: mockData.metrics.labels,
-            datasets: [{
-                label: '매출액 (KRW)',
-                data: mockData.metrics.revenue,
-                borderColor: '#10b981', // Green
-                backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                borderWidth: 2,
-                fill: true,
-                tension: 0.4
-            }]
-        },
-        options: commonOptions
+        options: Object.assign({}, commonOptions, {
+            scales: {
+                y: { beginAtZero: true, grid: { color: '#f1f5f9' }, ticks: { stepSize: 1 } },
+                x: { grid: { display: false } }
+            }
+        })
     });
 }
 
