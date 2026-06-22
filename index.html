@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appsparklab.io | 1일 1앱 솔로테이너</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="layout-wrapper">
+        <!-- 왼쪽 사이드바 (프로필) -->
+        <aside class="sidebar">
+            <div class="profile-section">
+                <!-- 프로필 이미지를 변경하려면 아래 src="이미지주소" 부분을 본인 사진 링크나 파일명으로 수정하세요 -->
+                <img src="프로필사진.jpg" alt="Profile Picture" class="profile-img">
+
+                <!-- 브랜드명 또는 본인 이름 -->
+                <h1 class="profile-name">이루다</h1>
+
+                <!-- 위치 및 매출 상태 (자유롭게 수정 가능) -->
+                <div class="profile-meta">
+                    <span class="meta-item">📍 Seoul, KR</span>
+                    <span class="meta-item">💵 ₩0/month</span>
+                </div>
+
+                <!-- 자기소개 영역 (텍스트 자유롭게 수정) -->
+                <div class="profile-bio">
+                    <p><em>1일 1앱을 만드는 솔로테이너입니다.</em></p>
+                    <p class="bio-sub">매일 하나의 앱을 만들고 런칭하며, 그 모든 과정을 투명하게 공유합니다. 👇</p>
+                </div>
+
+                <!-- 이메일/뉴스레터 구독 버튼 (마크루 스타일) -->
+                <div class="subscribe-box">
+                    <input type="email" placeholder="Your email..." class="email-input">
+                    <button class="subscribe-btn">Subscribe</button>
+                </div>
+
+                <!-- 소셜 미디어 링크 -->
+                <div class="social-links">
+                    <a href="#" title="X (Twitter)">
+                        <!-- X(Twitter) 아이콘 대체 텍스트 -->
+                        X (Twitter)
+                    </a>
+                    <a href="#" title="Threads">
+                        Threads
+                    </a>
+                    <a href="#" title="Email">
+                        Email
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 오른쪽 메인 콘텐츠 -->
+        <main class="content">
+
+            <!-- 1. 앱 리스트 섹션 (가장 위로 이동) -->
+            <section class="apps">
+                <h2 class="section-title">🚀 런칭한 앱들</h2>
+                <div class="apps-grid" id="apps-container">
+                    <!-- Apps will be injected by app.js -->
+                </div>
+            </section>
+
+            <!-- 2. 성과 대시보드 (앱 리스트 아래로 이동) -->
+            <section class="dashboard">
+                <h2 class="section-title">📊 앱 성과 대시보드</h2>
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3>일일 방문자 수</h3>
+                        <div class="canvas-wrapper">
+                            <canvas id="visitorsChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>앱 다운로드 수</h3>
+                        <div class="canvas-wrapper">
+                            <canvas id="downloadsChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>총 매출 (KRW)</h3>
+                        <div class="canvas-wrapper">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. 여정 (Timeline) 섹션 -->
+            <section class="timeline-section">
+                <h2 class="section-title">📝 메이커의 여정</h2>
+                <div class="timeline" id="timeline-container">
+                    <!-- Timeline items will be injected by app.js -->
+                </div>
+            </section>
+
+            <!-- 푸터 -->
+            <footer class="footer">
+                <p>&copy; 2026 appsparklab.io. All rights reserved.</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

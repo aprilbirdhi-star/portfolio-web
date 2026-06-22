@@ -1,0 +1,333 @@
+:root {
+    /* Bright & Clean Theme */
+    --primary-color: #2563eb; /* Trustworthy Blue */
+    --primary-hover: #1d4ed8;
+    --accent-color: #f59e0b; /* Subscribe Button Accent */
+    --accent-hover: #d97706;
+    --bg-color: #f1f5f9; /* Light gray background like Marc Lou */
+    --surface-color: #ffffff; /* White cards */
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --border-color: #e2e8f0;
+    --radius: 12px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* Layout Wrapper - The core of the left/right split */
+.layout-wrapper {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* Sidebar (Left Profile) */
+.sidebar {
+    flex: 0 0 280px; /* Fixed width for sidebar */
+    position: sticky;
+    top: 60px; /* Stays fixed when scrolling down */
+}
+
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.profile-name {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+.profile-meta {
+    display: flex;
+    gap: 15px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.profile-bio {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    margin-bottom: 25px;
+}
+
+.profile-bio em {
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+.bio-sub {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* Subscribe Box */
+.subscribe-box {
+    display: flex;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.email-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.email-input:focus {
+    border-color: var(--primary-color);
+}
+
+.subscribe-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-weight: 600;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.subscribe-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Main Content (Right Side) */
+.content {
+    flex: 1;
+    min-width: 0; /* Prevents flex items from overflowing */
+}
+
+/* Section Common */
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Apps Grid */
+.apps {
+    margin-bottom: 50px;
+}
+
+.apps-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.app-card {
+    background-color: var(--surface-color);
+    border-radius: var(--radius);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.app-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+}
+
+.app-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.app-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.app-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.app-status {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background-color: #dbeafe;
+    color: var(--primary-color);
+    white-space: nowrap;
+}
+
+/* Dashboard */
+.dashboard {
+    margin-bottom: 50px;
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.chart-card {
+    background-color: var(--surface-color);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.chart-card h3 {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.canvas-wrapper {
+    position: relative;
+    height: 150px; /* Reduced height for tighter layout */
+    width: 100%;
+}
+
+/* Timeline */
+.timeline-section {
+    margin-bottom: 50px;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.timeline-item {
+    background-color: var(--surface-color);
+    padding: 20px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.timeline-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.timeline-content {
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+/* Footer */
+.footer {
+    padding-top: 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+/* Responsive (Mobile view) */
+@media (max-width: 800px) {
+    .layout-wrapper {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 40px;
+    }
+    
+    .sidebar {
+        flex: auto;
+        width: 100%;
+        position: static;
+    }
+    
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .profile-section {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .subscribe-box {
+        max-width: 400px;
+        margin: 0 auto 30px;
+    }
+}
